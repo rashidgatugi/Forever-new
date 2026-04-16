@@ -4,23 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever New</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Forever New</h1>
-    </header>
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>Forever New is a fashion brand that delivers beautiful pieces that inspire and empower women.</p>
-        </section>
-        <section>
-            <h2>Our Collection</h2>
-            <p>Explore our latest fashion collection that caters to every occasion.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Forever New. All rights reserved.</p>
-    </footer>
+    <!-- Hero Section -->
+    <section class="bg-gray-900 text-white h-screen flex items-center justify-center">
+        <h1 class="text-5xl font-bold">Welcome to Forever New</h1>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="py-16 bg-gray-100">
+        <h2 class="text-center text-3xl font-semibold">Our Collections</h2>
+        <div class="flex justify-around mt-8">
+            <div class="border p-4">Collection 1</div>
+            <div class="border p-4">Collection 2</div>
+            <div class="border p-4">Collection 3</div>
+        </div>
+    </section>
+
+    <!-- Shoe Vault Section -->
+    <section class="py-16">
+        <h2 class="text-center text-3xl font-semibold">Shoe Vault</h2>
+        <div class="grid grid-cols-3 gap-4 mt-8">
+            <div class="border p-4">Shoe 1</div>
+            <div class="border p-4">Shoe 2</div>
+            <div class="border p-4">Shoe 3</div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="py-16 bg-gray-100">
+        <h2 class="text-center text-3xl font-semibold">Our Locations</h2>
+        <ul class="list-disc list-inside mt-8">
+            <li>Location 1</li>
+            <li>Location 2</li>
+            <li>Location 3</li>
+        </ul>
+    </section>
+
+    <!-- Floating Action Button (FAB) -->
+    <button class="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full shadow-lg">
+        <span>FAB</span>
+    </button>
+
+    <!-- Modal for Branch Info -->
+    <div id="modal" class="hidden fixed inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-5 rounded">
+            <h2 class="text-xl font-semibold">Branch Details</h2>
+            <button id="close-modal" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Close</button>
+        </div>
+    </div>
+
+    <!-- Product Grids and Interactivity -->
+    <script>
+        $(document).ready(function () {
+            // Open modal
+            $('.floating-action-button').on('click', function () {
+                $('#modal').removeClass('hidden');
+            });
+
+            // Close modal
+            $('#close-modal').on('click', function () {
+                $('#modal').addClass('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
